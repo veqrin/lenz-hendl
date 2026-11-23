@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  list-style-type: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: #050505;
+  color: #fcfcfc;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+button,
+select {
+  transition: 0.12s ease-in-out;
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0 12px 0 12px;
+}
+
+nav button#openMenuBtn {
+  width: 48px;
+  height: 48px;
+  background: transparent;
+  color: #fff;
+}
+
+nav h2 {
+  font-size: 28px;
+}
+
+nav .logo {
+  color: #fff;
+}
+
+nav .logo svg {
+  width: 72px;
+  height: 72px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+form input,
+form select,
+form button {
+  width: 100%;
+  padding: 8px 12px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(36, 36, 36, 0.7);
+  color: #fff;
+  font-size: 18px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+form input::-webkit-outer-spin-button,
+form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+form input::placeholder {
+  color: rgba(173, 173, 173, 0.4);
+}
+
+form .group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+form .group .amount {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+form .group .amount button {
+  min-width: 48px;
+  max-width: 48px;
+  font-size: 28px;
+  font-weight: 500;
+  box-shadow: none;
+  transition: 0.2s ease-in-out;
+  &:active {
+    background: rgba(255, 255, 255, 0.12);
+  }
+}
+
+form .group .amount button#decreaseAmountBtn {
+  border-radius: 12px 0 0 12px;
+}
+
+form .group .amount button#increaseAmountBtn {
+  border-radius: 0 12px 12px 0;
+}
+
+form .group .amount input#amountInput {
+  border-radius: 0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: none;
+}
+
+form button#addOrderBtn {
+  background: rgba(134, 40, 241, 0.5);
+  border: 1px solid rgb(132, 53, 223);
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  isolation: isolate;
+}
+
+table {
+  width: max-content;
+  min-width: 100%;
+  border-spacing: 0;
+  border-collapse: separate;
+  background: rgba(24, 24, 24, 0.65);
+  font-size: 14px;
+}
+
+/* Header */
+table thead th {
+  text-align: start;
+  padding: 13px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.55);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
+}
+
+/* Header: Fixed first column */
+table thead th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 3;
+  background: #1c1c1c;
+}
+
+/* Body */
+table tbody td {
+  padding: 14px 16px;
+  color: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  white-space: nowrap;
+}
+
+/* Fixed first column */
+table tbody td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  background: #181818;
+  max-width: 120px;
+  text-wrap: wrap;
+}
+
+/* Alternating rows */
+table tbody tr:nth-child(even) td {
+  background: #1c1c1c;
+}
+
+/* Hover */
+table tbody tr:hover td {
+  background: #292333;
+}
+
+/* Last row */
+table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Scrollbar */
+.table-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(185, 148, 255, 0.35);
+  border-radius: 12px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
